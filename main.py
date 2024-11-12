@@ -1,13 +1,18 @@
-with open('text.txt') as file:
+with open('text.txt', 'r') as file:
     content = file.read()
 
-new_text = []
-word_count = 0
+new_content = ""
 
-for word in content.split():
-    if len(word) > 6:
-        word_count += 1
-        new_text.append(f"{word_count}: {word}")
+for char in content:
+    if char == '*':
+        new_content += '&'
+    else:
+        new_content += char
 
-with open('out.txt', 'w') as output_file:
-    output_file.write("\n".join(new_text))
+with open('text.txt', 'w') as file:
+    file.write(new_content)
+
+print("символи '*' замінено на '&'.")
+
+with open('symbol.txt', 'w') as overwrite:
+    content = overwrite.write(new_content)
