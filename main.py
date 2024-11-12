@@ -1,7 +1,13 @@
 with open('text.txt', 'r') as file:
     content = file.readlines()
 
-reversed_content = content[::-1]
+insert_index = len(content)
+for i in range(len(content) - 1, -1, -1):
+    if ',' not in content[i]:
+        insert_index = i + 1
+        break
+
+content.insert(insert_index, '************\n\t')
 
 with open('out.txt', 'w') as output_file:
-    output_file.writelines(reversed_content)
+    output_file.writelines(content)
