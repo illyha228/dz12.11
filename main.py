@@ -1,10 +1,11 @@
-search = input('Введіть: ')
-
 with open('text.txt', 'r') as file:
-    lines = file.read().split()
+    lines = file.readlines()
 
-count = 0
+max_line = 0
 for line in lines:
-    if search in line:
-        count += 1
-print(count)
+        count_char = 0
+        for char in line:
+            count_char += 1
+        if count_char > max_line:
+            max_line = count_char
+print(f"Max = {max_line}")
