@@ -10,6 +10,6 @@ for line in origin_data:
     if line not in overwrite_data:
         origin_diff.append(line)
 
-print("нема'text.txt',  у 'out.txt':")
+print("нем'text.txt',  у 'out.txt':")
 for line in origin_diff:
     print(line)
