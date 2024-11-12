@@ -1,13 +1,10 @@
-a = input("Enter : ")
+search = input('Введіть: ')
 
 with open('text.txt', 'r') as file:
-    content = file.read()
+    lines = file.read().split()
 
-words = content.split()
 count = 0
-
-for word in words:
-    if word.startswith(a):
+for line in lines:
+    if search in line:
         count += 1
-
 print(count)
