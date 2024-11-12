@@ -1,13 +1,13 @@
+a = input("Enter : ")
+
 with open('text.txt', 'r') as file:
-    content = file.readlines()
+    content = file.read()
 
-insert_index = len(content)
-for i in range(len(content) - 1, -1, -1):
-    if ',' not in content[i]:
-        insert_index = i + 1
-        break
+words = content.split()
+count = 0
 
-content.insert(insert_index, '************\n\t')
+for word in words:
+    if word.startswith(a):
+        count += 1
 
-with open('out.txt', 'w') as output_file:
-    output_file.writelines(content)
+print(count)
