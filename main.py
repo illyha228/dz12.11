@@ -1,13 +1,13 @@
-with open('text.txt') as file:
+a = input("Введіть: ")
+
+with open('text.txt', 'r') as file:
     content = file.read()
 
-new_text = []
-word_count = 0
+words = content.split()
+count = 0
 
-for word in content.split():
-    if len(word) > 6:
-        word_count += 1
-        new_text.append(f"{word_count}: {word}")
+for word in words:
+    if word.startswith(a):
+        count += 1
 
-with open('out.txt', 'w') as output_file:
-    output_file.write("\n".join(new_text))
+print(count)
