@@ -1,7 +1,13 @@
-with open('text.txt ', 'r') as file:
-    lines = file.readlines()
+with open('text.txt') as file:
+    content = file.read()
 
-last_line = lines[-1]
+new_text = []
+word_count = 0
 
-with open('line.txt', 'w') as file:
-    file.writelines(lines[:-1])
+for word in content.split():
+    if len(word) > 6:
+        word_count += 1
+        new_text.append(f"{word_count}: {word}")
+
+with open('out.txt', 'w') as output_file:
+    output_file.write("\n".join(new_text))
