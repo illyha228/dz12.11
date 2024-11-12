@@ -1,13 +1,13 @@
-a = input("Введіть: ")
+lines = [
+    "Test1",
+    "Test2"
+]
 
-with open('text.txt', 'r') as file:
-    content = file.read()
 
-words = content.split()
-count = 0
+file_path = 'out2.txt'
 
-for word in words:
-    if word.startswith(a):
-        count += 1
+with open(file_path, 'w') as file:
+    for line in lines:
+        file.write(line + '\n')
 
-print(count)
+#ну я 8 сначала не поняв але так як я поняв по такій суті і 8 робеться
