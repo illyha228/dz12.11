@@ -1,7 +1,12 @@
-with open('text.txt ', 'r') as file:
-    lines = file.readlines()
+search = input('Введіть: ')
+overwritten = input('Введіть ')
 
-last_line = lines[-1]
+with open('text.txt', 'r') as file:
+    text = file.read()
 
-with open('line.txt', 'w') as file:
-    file.writelines(lines[:-1])
+updated_text = text.replace(search, overwritten)
+
+print(updated_text)
+
+with open('out.txt', 'w') as file:
+    file.write(updated_text)es[:-1])
